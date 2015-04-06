@@ -173,10 +173,18 @@ class Game extends JPanel{
             for(int i=0;i<=10;i++){
                 g.fillRect(screenWidth/2, i*((screenHeight)/10), 20, 40); 
             }
-            if(chron){
+            if(chron && count<90){
+               if(count%30==0){
+                countNo--;
+               }
+               count++;
                g.setColor(Color.red);
                g.setFont(bigNumbers);
                g.drawString(Integer.toString(countNo), 600,500);
+            }
+            else if(count>=90){
+                chron=false;
+                ballMove(); //moves the ball
             }
             else if(!chron){
                 g.setColor(Color.gray);
@@ -209,20 +217,8 @@ class Game extends JPanel{
     public void pongRun(SampleListener listener){
         replay=false;
         if(inGame==true){
-            replay=false;
             appY_2=listener.getCoorY(2); //gets Y coordinates of fingers from the leap
             appY_1=listener.getCoorY(1);
-            if(count<90){
-                chron=true;
-                if(count%30==0){
-                    countNo--;
-                }
-                count++;
-            }
-            else if(count>=90){
-                chron=false;
-                ballMove(); //moves the ball
-            }
             if(score1==3){ //ends game
                 winner=1;
                 inGame=false;
