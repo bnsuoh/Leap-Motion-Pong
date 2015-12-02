@@ -1,7 +1,10 @@
-/**
- *  Leap Motion Pong game by Bensu
- *
- */
+/*********************************************************
+ * Leap Motion Pong game by Bensu
+ * 
+ * - Played with two players. Vertical coordinates
+ * of righmost and leftmost fingers are calculated
+ * to move the sticks
+ * *******************************************************/
 
 package pong;
 
@@ -247,8 +250,8 @@ public class Pong extends JFrame{
         frame.setSize(screenWidth, screenHeight);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //Controller controller = new Controller(); //initializes leap
-        //SampleListener listener=new SampleListener();
-        //controller.addListener(listener); //starts leap
+        Controller controller = new Controller(); //initializes leap
+        SampleListener listener=new SampleListener();
+        controller.addListener(listener); //starts leap
     }
 }
