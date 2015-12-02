@@ -1,7 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ *  Leap Motion Pong game by Bensu
+ *
  */
 
 package pong;
@@ -18,10 +17,7 @@ import java.awt.EventQueue;
 import java.awt.event.ActionListener;
 import java.util.TimerTask;
 import javax.swing.JPanel;
-/**
- *
- * @author bensu
- */
+
 class SampleListener extends Listener{
     public int screenHeight=740;
     public int screenWidth=1366;
